@@ -43,8 +43,6 @@ export default {
   },
 
   async created() {
-    console.clear();
-
     this.listClinics = await this.getApiData(this.apiBaseUrl + this.getClinics);
     this.loadedReviews = true;
   },
