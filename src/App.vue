@@ -5,12 +5,9 @@
 </style>
 
 <template>
-  <div
-    v-if="loadedReviews && getRatingFromCity()"
-    class="review-score-wrapper badge"
-  >
+  <div v-if="loadedReviews" class="review-score-wrapper badge">
     <div class="text-review-score">
-      {{ getRatingFromCity().toFixed(2) }}
+      {{ getRatingFromCity() ? getRatingFromCity() : getRatingAllClinics() }}
     </div>
 
     <div class="star-wrapper">
@@ -49,7 +46,13 @@ export default {
 
   computed: {
     starClipping() {
-      return ((this.getRatingFromCity() / 5) * 100).toFixed(2);
+      return (
+        ((this.getRatingFromCity()
+          ? this.getRatingFromCity()
+          : this.getRatingAllClinics()) /
+          5) *
+        100
+      ).toFixed(2);
     },
   },
 
@@ -105,12 +108,27 @@ export default {
       if (city) {
         for (const clinic of this.listClinics.data) {
           if (clinic.attributes.clinic_city === city) {
-            return clinic.attributes.overall_rating;
+            return clinic.attributes.overall_rating.toFixed(2);
           }
         }
       }
 
       return null;
+    },
+
+    getRatingAllClinics() {
+      const ratings = [];
+      let sum = 0;
+
+      for (const clinic of this.listClinics.data) {
+        ratings.push(parseFloat(clinic.attributes.overall_rating));
+      }
+
+      for (const rating of ratings) {
+        sum += rating;
+      }
+
+      return (sum / this.listClinics.data.length).toFixed(2);
     },
   },
 };
