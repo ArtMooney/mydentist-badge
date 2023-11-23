@@ -52,7 +52,7 @@ export default {
           : this.getRatingAllClinics()) /
           5) *
         100
-      ).toFixed(2);
+      ).toFixed(3);
     },
   },
 
@@ -108,7 +108,7 @@ export default {
       if (city) {
         for (const clinic of this.listClinics.data) {
           if (clinic.attributes.clinic_city === city) {
-            return clinic.attributes.overall_rating.toFixed(2);
+            return clinic.attributes.overall_rating.toFixed(1);
           }
         }
       }
@@ -128,7 +128,7 @@ export default {
         sum += rating;
       }
 
-      return (sum / this.listClinics.data.length).toFixed(2);
+      return (sum / this.listClinics.data.length).toFixed(1);
     },
   },
 };

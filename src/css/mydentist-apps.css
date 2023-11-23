@@ -843,7 +843,7 @@ a {
 
 .text-review-score {
   margin-right: 0.5rem;
-  padding-top: 0.2rem;
+  padding-top: 0.4rem;
   font-family: Fororounded, sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -1179,11 +1179,6 @@ a {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
-#w-node-_43e78301-f4e5-c172-1fbb-c71ce5cf950c-7bbf4cde {
-  align-self: start;
-  justify-self: end;
-}
-
 @media screen and (max-width: 767px) {
   #w-node-_7774ae3b-e687-287a-81f9-e752ccf6179e-2190bb79 {
     grid-area: 1 / 1 / 2 / 2;
@@ -1225,8 +1220,7 @@ a {
 @media screen and (max-width: 479px) {
   #w-node-_43e78301-f4e5-c172-1fbb-c71ce5cf950c-ff84f577,
   #w-node-f164f0d0-58c8-f834-728d-4a959bb70a25-ff84f577,
-  #w-node-_1fae3cab-8747-3ddc-498c-d9b268dfeec6-ff84f577,
-  #w-node-_43e78301-f4e5-c172-1fbb-c71ce5cf950c-7bbf4cde {
+  #w-node-_1fae3cab-8747-3ddc-498c-d9b268dfeec6-ff84f577 {
     justify-self: start;
   }
 }
