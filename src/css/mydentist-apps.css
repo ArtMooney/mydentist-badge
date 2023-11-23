@@ -962,8 +962,7 @@ a {
     line-height: 1.6rem;
   }
 
-  .review-score-wrapper.vertical,
-  .review-score-wrapper.badge {
+  .review-score-wrapper.vertical {
     padding-left: 1rem;
   }
 
@@ -1060,8 +1059,7 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .review-score-wrapper.vertical,
-  .review-score-wrapper.badge {
+  .review-score-wrapper.vertical {
     padding-left: 0;
   }
 
